@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AirportDb" Class="AirportDataClassesDataContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=AYXAN;Initial Catalog=AirportDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="ADO.NET_Task6.Properties.Settings" SettingsPropertyName="AirportDbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.FlightTypes" Member="FlightTypes">
+    <Type Name="FlightType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="FlightType_Ticket" Member="Tickets" ThisKey="Id" OtherKey="FlightTypeId" Type="Ticket" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pilots" Member="Pilots">
+    <Type Name="Pilot">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Surname" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Pilot_Airplane" Member="Airplanes" ThisKey="Id" OtherKey="PilotId" Type="Airplane" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Schedules" Member="Schedules">
+    <Type Name="Schedule">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StartDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Schedule_Ticket" Member="Tickets" ThisKey="Id" OtherKey="ScheduleId" Type="Ticket" />
+      <Association Name="Schedule_City" Member="Cities" ThisKey="Id" OtherKey="ScheduleId" Type="City" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tickets" Member="Tickets">
+    <Type Name="Ticket">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CityId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AirplaneId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ScheduleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FlightTypeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="FlightType_Ticket" Member="FlightType" ThisKey="FlightTypeId" OtherKey="Id" Type="FlightType" IsForeignKey="true" />
+      <Association Name="Schedule_Ticket" Member="Schedule" ThisKey="ScheduleId" OtherKey="Id" Type="Schedule" IsForeignKey="true" />
+      <Association Name="City_Ticket" Member="City" ThisKey="CityId" OtherKey="Id" Type="City" IsForeignKey="true" />
+      <Association Name="Airplane_Ticket" Member="Airplane" ThisKey="AirplaneId" OtherKey="Id" Type="Airplane" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cities" Member="Cities">
+    <Type Name="City">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="AirplaneId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ScheduleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="City_Ticket" Member="Tickets" ThisKey="Id" OtherKey="CityId" Type="Ticket" />
+      <Association Name="Schedule_City" Member="Schedule" ThisKey="ScheduleId" OtherKey="Id" Type="Schedule" IsForeignKey="true" />
+      <Association Name="Airplane_City" Member="Airplane" ThisKey="AirplaneId" OtherKey="Id" Type="Airplane" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Airplanes" Member="Airplanes">
+    <Type Name="Airplane">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="PassengerCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PilotId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Airplane_Ticket" Member="Tickets" ThisKey="Id" OtherKey="AirplaneId" Type="Ticket" />
+      <Association Name="Airplane_City" Member="Cities" ThisKey="Id" OtherKey="AirplaneId" Type="City" />
+      <Association Name="Pilot_Airplane" Member="Pilot" ThisKey="PilotId" OtherKey="Id" Type="Pilot" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

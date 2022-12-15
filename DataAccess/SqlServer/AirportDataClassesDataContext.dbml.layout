@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="AirportDataClassesDataContext">
+  <DataContextMoniker Name="/AirportDataClassesDataContextDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b9aa196a-dcab-473b-8b43-df1f9e9a4ddc" absoluteBounds="3.5, 1.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/AirportDataClassesDataContextDataContext/FlightType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f933bed6-30d7-4dac-ac04-214f29ae5d28" absoluteBounds="3.515, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7a7aad9e-b039-44eb-88fc-28d3a8a56eb3" absoluteBounds="1.5, 6.625, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/AirportDataClassesDataContextDataContext/Pilot" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7386fed3-390a-426a-810f-6d7dc3f528d1" absoluteBounds="1.5150000000000001, 7.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8ff619ec-48c5-4023-a2dd-f0e0e804f058" absoluteBounds="0.75, 4, 2, 1.193992513020834">
+      <DataClassMoniker Name="/AirportDataClassesDataContextDataContext/Schedule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1e800dbb-5df1-4a38-acf3-99deb37e2b96" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="21b561be-eb29-4bf4-b982-dd99bde28e7f" absoluteBounds="6.25, 3.5, 2, 1.9631982421874992">
+      <DataClassMoniker Name="/AirportDataClassesDataContextDataContext/Ticket" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c3f33447-76f9-4246-9155-420a4e09ee88" absoluteBounds="6.265, 3.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6b90b453-4f01-4f2f-b98a-bad68c31f872" absoluteBounds="3.5, 3.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/AirportDataClassesDataContextDataContext/City" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dec72651-ddb5-4aa0-84c8-93531b3de7c9" absoluteBounds="3.515, 4.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="84679237-784e-43b5-80f2-5cf354b8a970" absoluteBounds="0.75, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/AirportDataClassesDataContextDataContext/Airplane" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4ca3249a-8e10-4bf2-affa-6a47cfd87dfb" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 2.34699625651042); (6.63541416666667 : 2.34699625651042 : JumpStart); (6.80208083333333 : 2.34699625651042 : JumpEnd); (7.25 : 2.34699625651042); (7.25 : 3.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AirportDataClassesDataContextDataContext/FlightType/FlightType_Ticket" />
+      <nodes>
+        <classShapeMoniker Id="b9aa196a-dcab-473b-8b43-df1f9e9a4ddc" />
+        <classShapeMoniker Id="21b561be-eb29-4bf4-b982-dd99bde28e7f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 4); (1.75 : 3.59375); (3.04166666666667 : 3.59375 : JumpStart); (3.36458333333333 : 3.59375 : JumpEnd); (6.25 : 3.59375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AirportDataClassesDataContextDataContext/Schedule/Schedule_Ticket" />
+      <nodes>
+        <classShapeMoniker Id="8ff619ec-48c5-4023-a2dd-f0e0e804f058" />
+        <classShapeMoniker Id="21b561be-eb29-4bf4-b982-dd99bde28e7f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.53929768880208); (6.25 : 4.53929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AirportDataClassesDataContextDataContext/City/City_Ticket" />
+      <nodes>
+        <classShapeMoniker Id="6b90b453-4f01-4f2f-b98a-bad68c31f872" />
+        <classShapeMoniker Id="21b561be-eb29-4bf4-b982-dd99bde28e7f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.59699625651042); (3.19791666666667 : 4.59699625651042 : JumpStart); (3.36458333333333 : 4.59699625651042 : JumpEnd); (3.5 : 4.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AirportDataClassesDataContextDataContext/Schedule/Schedule_City" />
+      <nodes>
+        <classShapeMoniker Id="8ff619ec-48c5-4023-a2dd-f0e0e804f058" />
+        <classShapeMoniker Id="6b90b453-4f01-4f2f-b98a-bad68c31f872" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.21875); (6.7187475 : 1.21875); (6.7187475 : 3.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AirportDataClassesDataContextDataContext/Airplane/Airplane_Ticket" />
+      <nodes>
+        <classShapeMoniker Id="84679237-784e-43b5-80f2-5cf354b8a970" />
+        <classShapeMoniker Id="21b561be-eb29-4bf4-b982-dd99bde28e7f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.32859537760417); (3.125 : 2.70359537760417); (3.125 : 4.14224612825521); (3.19791666666667 : 4.14224612825521 : JumpStart); (3.36458333333333 : 4.14224612825521 : JumpEnd); (3.5 : 4.14224612825521)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AirportDataClassesDataContextDataContext/Airplane/Airplane_City" />
+      <nodes>
+        <classShapeMoniker Id="84679237-784e-43b5-80f2-5cf354b8a970" />
+        <classShapeMoniker Id="6b90b453-4f01-4f2f-b98a-bad68c31f872" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.28125 : 6.625); (3.28125 : 1.77367268880208); (2.75 : 1.77367268880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AirportDataClassesDataContextDataContext/Pilot/Pilot_Airplane" />
+      <nodes>
+        <classShapeMoniker Id="7a7aad9e-b039-44eb-88fc-28d3a8a56eb3" />
+        <classShapeMoniker Id="84679237-784e-43b5-80f2-5cf354b8a970" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

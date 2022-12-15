@@ -1,0 +1,195 @@
+﻿<Window x:Class="ADO.NET_Task6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ADO.NET_Task6"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="450"
+        Width="800"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <Style x:Key="MyButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#237843"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="Padding" Value="10"></Setter>
+            <Setter Property="FontSize" Value="40"></Setter>
+            <Setter Property="Height" Value="70"></Setter>
+            <Setter Property="FontFamily" Value="Cascadia Code SemiBold"></Setter>
+            <Setter Property="Cursor" Value="Hand"></Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter Property="Background" Value="#237843" ></Setter>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#607D3B" ></Setter>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#237843"></Setter>
+
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=PurchaseBtn, Path=IsMouseOver}" Value="True">
+                    <Setter Property="Foreground" Value="#607D3B" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+
+        <Style x:Key="BorderStyle" TargetType="Border">
+            <Setter Property="BorderBrush" Value="#237843"></Setter>
+
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=PurchaseBtn, Path=IsMouseOver}" Value="True">
+                    <Setter Property="BorderBrush" Value="#607D3B" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--Head-->
+        <Border Style="{StaticResource BorderStyle}"
+                BorderThickness="0,3,0,3">
+            <StackPanel>
+                <!--Headline-->
+                <TextBlock Style="{StaticResource TextBlockStyle}"
+                           Text="Order Flight"
+                           FontSize="40"
+                           FontFamily="Cascadia Code SemiBold"
+                           Margin="10"
+                           Width="Auto"
+                           HorizontalAlignment="Center"
+                           x:Name="Headline">
+                </TextBlock>
+            </StackPanel>
+        </Border>
+
+        <!--Body-->
+        <StackPanel Grid.Row="1"
+                    Margin="0,20,0,0">
+            <StackPanel Margin="20,20,10,20"
+                        Orientation="Horizontal">
+                <!--From City-->
+                <TextBlock Style="{StaticResource TextBlockStyle}"
+                           Margin="5" 
+                           FontSize="20"
+                           FontFamily="Cascadia Code SemiBold"
+                           Text="From">
+                </TextBlock>
+
+                <!--Cities Combo Box-->
+                <ComboBox SelectedItem=""
+                          Name="fromCombo"
+                          Width="125" 
+                          FontFamily="Cascadia Code SemiLight"
+                          Margin="5">
+                </ComboBox>
+
+                <!--To City-->
+                <TextBlock Style="{StaticResource TextBlockStyle}"
+                           FontSize="20"
+                           Margin="5"
+                           FontFamily="Cascadia Code SemiBold"
+                           Text="To">
+                </TextBlock>
+
+                <!--Cities Combo Box-->
+                <ComboBox SelectedItem=""
+                          Name="toCombo" 
+                          Width="125"
+                          FontFamily="Cascadia Code SemiLight"
+                          Margin="5">
+                </ComboBox>
+
+                <!--Date-->
+                <TextBlock Style="{StaticResource TextBlockStyle}"
+                           FontSize="20"
+                           Margin="5"
+                           FontFamily="Cascadia Code SemiBold"
+                           Text="Date">
+                </TextBlock>
+
+                <!--Dates Combo Box-->
+                <ComboBox SelectedItem=""
+                          Name="dateCombo" 
+                          Width="125"
+                          FontFamily="Cascadia Code SemiLight"
+                          Margin="5"></ComboBox>
+
+                <!--Type-->
+                <TextBlock Style="{StaticResource TextBlockStyle}"
+                           FontSize="20" 
+                           Margin="5"
+                           FontFamily="Cascadia Code SemiBold"
+                           Text="Type">
+                </TextBlock>
+
+                <!--Flight Types Combo Box-->
+                <ComboBox Name="typeCombo" 
+                          Width="125"
+                          FontFamily="Cascadia Code SemiLight"
+                          Margin="5">
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+
+        <!--Body 2-->
+        <StackPanel Grid.Row="1" 
+                    VerticalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" 
+                        Orientation="Horizontal">
+                <!--Your Name Text Block-->
+                <TextBlock Style="{StaticResource TextBlockStyle}"
+                           Margin="10" 
+                           FontSize="25"
+                           Text="Your Name"
+                           FontFamily="Cascadia Code SemiBold">
+                </TextBlock>
+                <!--Enter Text-->
+                <TextBox Margin="5" 
+                         Padding="5"
+                         FontSize="25"
+                         Width="250"
+                         Height="40"
+                         FontFamily="Cascadia Code SemiLight">
+                </TextBox>
+            </StackPanel>
+        </StackPanel>
+
+        <!--End-->
+        <StackPanel VerticalAlignment="Bottom"
+                    Grid.Row="1">
+            <!--Purchase Button-->
+            <Button Style="{StaticResource MyButtonStyle}"
+                    Content="Purchase"
+                    x:Name="PurchaseBtn"
+                    Command="{Binding PurchaseCommand}">
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
