@@ -83,6 +83,12 @@
     <Compile Include="Domain\Abstractions\IRepository.cs" />
     <Compile Include="Domain\Abstractions\IScheduleRepository.cs" />
     <Compile Include="Domain\Abstractions\ITicketRepository.cs" />
+    <Compile Include="Domain\Services\AirplaneService.cs" />
+    <Compile Include="Domain\Services\CityService.cs" />
+    <Compile Include="Domain\Services\PilotService.cs" />
+    <Compile Include="Domain\Services\ScheduleService.cs" />
+    <Compile Include="Domain\ViewModels\BaseViewModel.cs" />
+    <Compile Include="Domain\ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Domain\Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -125,11 +131,12 @@
   <ItemGroup>
     <Folder Include="Domain\AdditionalClasses\" />
     <Folder Include="Domain\Models\" />
-    <Folder Include="Domain\Services\" />
-    <Folder Include="Domain\ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Domain\Assets\airplane.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

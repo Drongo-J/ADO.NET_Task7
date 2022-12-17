@@ -1,0 +1,16 @@
+C:\Users\Hafiz\source\repos\ADO.NET_Task6\bin\Debug\ADO.NET_Task6.exe.config
+C:\Users\Hafiz\source\repos\ADO.NET_Task6\bin\Debug\ADO.NET_Task6.exe
+C:\Users\Hafiz\source\repos\ADO.NET_Task6\bin\Debug\ADO.NET_Task6.pdb
+C:\Users\Hafiz\source\repos\ADO.NET_Task6\obj\Debug\ADO.NET_Task7.csproj.AssemblyReference.cache
+C:\Users\Hafiz\source\repos\ADO.NET_Task6\obj\Debug\ADO.NET_Task7.csproj.SuggestedBindingRedirects.cache
+C:\Users\Hafiz\source\repos\ADO.NET_Task6\obj\Debug\Domain\Views\MainWindow.g.cs
+C:\Users\Hafiz\source\repos\ADO.NET_Task6\obj\Debug\App.g.cs
+C:\Users\Hafiz\source\repos\ADO.NET_Task6\obj\Debug\ADO.NET_Task6_MarkupCompile.cache
+C:\Users\Hafiz\source\repos\ADO.NET_Task6\obj\Debug\ADO.NET_Task6_MarkupCompile.lref
+C:\Users\Hafiz\source\repos\ADO.NET_Task6\obj\Debug\Domain\Views\MainWindow.baml
+C:\Users\Hafiz\source\repos\ADO.NET_Task6\obj\Debug\ADO.NET_Task6.g.resources
+C:\Users\Hafiz\source\repos\ADO.NET_Task6\obj\Debug\ADO.NET_Task6.Properties.Resources.resources
+C:\Users\Hafiz\source\repos\ADO.NET_Task6\obj\Debug\ADO.NET_Task7.csproj.GenerateResource.cache
+C:\Users\Hafiz\source\repos\ADO.NET_Task6\obj\Debug\ADO.NET_Task7.csproj.CoreCompileInputs.cache
+C:\Users\Hafiz\source\repos\ADO.NET_Task6\obj\Debug\ADO.NET_Task6.exe
+C:\Users\Hafiz\source\repos\ADO.NET_Task6\obj\Debug\ADO.NET_Task6.pdb

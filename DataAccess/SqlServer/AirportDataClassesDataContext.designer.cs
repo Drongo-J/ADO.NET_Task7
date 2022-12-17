@@ -132,8 +132,12 @@ namespace ADO.NET_Task6.DataAccess.SqlServer
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.FlightTypes")]
 	public partial class FlightType : INotifyPropertyChanging, INotifyPropertyChanged
 	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+        public override string ToString()
+        {
+			return Type; 
+        }
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		
@@ -384,8 +388,12 @@ namespace ADO.NET_Task6.DataAccess.SqlServer
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Schedules")]
 	public partial class Schedule : INotifyPropertyChanging, INotifyPropertyChanged
 	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+        public override string ToString()
+        {
+			return StartDateTime.ToString();
+        }
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		
@@ -872,8 +880,12 @@ namespace ADO.NET_Task6.DataAccess.SqlServer
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cities")]
 	public partial class City : INotifyPropertyChanging, INotifyPropertyChanged
 	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+        public override string ToString()
+        {
+			return Name;
+        }
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		
@@ -1116,8 +1128,11 @@ namespace ADO.NET_Task6.DataAccess.SqlServer
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Airplanes")]
 	public partial class Airplane : INotifyPropertyChanging, INotifyPropertyChanged
 	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+        public override string ToString()
+        {
+			return Name;
+        }
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		

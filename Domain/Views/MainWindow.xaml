@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ADO.NET_Task6"
         mc:Ignorable="d"
-        Title="MainWindow" 
         Height="450"
-        Width="800"
+        Width="820"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        Title="Airport"
+        Icon="\Domain\Assets\airplane.ico">
     <Window.Resources>
         <Style x:Key="MyButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="#237843"></Setter>
@@ -91,40 +92,42 @@
 
         <!--Body-->
         <StackPanel Grid.Row="1"
-                    Margin="0,20,0,0">
+                    Margin="-15,20,0,0">
             <StackPanel Margin="20,20,10,20"
                         Orientation="Horizontal">
-                <!--From City-->
+                <!--To City-->
                 <TextBlock Style="{StaticResource TextBlockStyle}"
                            Margin="5" 
                            FontSize="20"
                            FontFamily="Cascadia Code SemiBold"
-                           Text="From">
+                           Text="To">
                 </TextBlock>
-
-                <!--Cities Combo Box-->
-                <ComboBox SelectedItem=""
+                <!--From Cities Combo Box-->
+                <ComboBox SelectedItem="{Binding SelectedCity, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                          ItemsSource="{Binding Cities}"
                           Name="fromCombo"
                           Width="125" 
                           FontFamily="Cascadia Code SemiLight"
                           Margin="5">
                 </ComboBox>
 
-                <!--To City-->
+
+                <!--Airplane-->
                 <TextBlock Style="{StaticResource TextBlockStyle}"
                            FontSize="20"
                            Margin="5"
                            FontFamily="Cascadia Code SemiBold"
-                           Text="To">
+                           Text="Airplane">
                 </TextBlock>
-
                 <!--Cities Combo Box-->
-                <ComboBox SelectedItem=""
-                          Name="toCombo" 
+                <ComboBox SelectedItem="{Binding SelectedAirplane, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                          ItemsSource="{Binding Airplanes}"
+                          Name="AirplaneCombo" 
                           Width="125"
                           FontFamily="Cascadia Code SemiLight"
                           Margin="5">
                 </ComboBox>
+
 
                 <!--Date-->
                 <TextBlock Style="{StaticResource TextBlockStyle}"
@@ -133,13 +136,14 @@
                            FontFamily="Cascadia Code SemiBold"
                            Text="Date">
                 </TextBlock>
-
                 <!--Dates Combo Box-->
-                <ComboBox SelectedItem=""
+                <ComboBox SelectedItem="{Binding SelectedSchedule, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                          ItemsSource="{Binding Schedules}"
                           Name="dateCombo" 
                           Width="125"
                           FontFamily="Cascadia Code SemiLight"
                           Margin="5"></ComboBox>
+
 
                 <!--Type-->
                 <TextBlock Style="{StaticResource TextBlockStyle}"
@@ -148,9 +152,9 @@
                            FontFamily="Cascadia Code SemiBold"
                            Text="Type">
                 </TextBlock>
-
                 <!--Flight Types Combo Box-->
-                <ComboBox Name="typeCombo" 
+                <ComboBox SelectedItem="{Binding SelectedFlightType, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                          ItemsSource="{Binding FlightTypes}"
                           Width="125"
                           FontFamily="Cascadia Code SemiLight"
                           Margin="5">
@@ -158,7 +162,7 @@
             </StackPanel>
         </StackPanel>
 
-        <!--Body 2-->
+        <!--Body 3-->
         <StackPanel Grid.Row="1" 
                     VerticalAlignment="Center">
             <StackPanel HorizontalAlignment="Center" 
@@ -176,6 +180,7 @@
                          FontSize="25"
                          Width="250"
                          Height="40"
+                         Text="{Binding YourName,Mode=OneWayToSource}"
                          FontFamily="Cascadia Code SemiLight">
                 </TextBox>
             </StackPanel>

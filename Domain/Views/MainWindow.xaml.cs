@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ADO.NET_Task6.Domain.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace ADO.NET_Task6
         public MainWindow()
         {
             InitializeComponent();
+            var mainWindowViewModel = new MainWindowViewModel();
+            this.DataContext = mainWindowViewModel;
         }
     }
 }

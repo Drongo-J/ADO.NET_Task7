@@ -49,7 +49,7 @@ namespace ADO.NET_Task6.DataAccess.SqlServer
             item.Tickets = data.Tickets;
             item.Type = data.Type;
 
-            _dataContext.SubmitChanges();
+            _dataContext.SubmitChanges();   
         }
     }
 }
