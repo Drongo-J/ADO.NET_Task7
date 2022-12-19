@@ -20,7 +20,7 @@ namespace ADO.NET_Task6.DataAccess.SqlServer
         public void AddData(Ticket data)
         {
             _dataContext.Tickets.InsertOnSubmit(data);
-            _dataContext.SubmitChanges();
+             _dataContext.SubmitChanges();
         }
 
         public void DeleteData(Ticket data)

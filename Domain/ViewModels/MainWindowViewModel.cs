@@ -143,13 +143,13 @@ namespace ADO.NET_Task6.Domain.ViewModels
 
                 var ticket = new Ticket()
                 {
-                    Airplane = SelectedAirplane,
-                    Schedule = SelectedSchedule,
-                    FlightType = SelectedFlightType,
-                    City= SelectedCity,
+                    AirplaneId = SelectedAirplane.Id,
+                    ScheduleId = SelectedSchedule.Id,
+                    FlightTypeId = SelectedFlightType.Id,
+                    CityId = SelectedCity.Id,
                     Name = YourName
                 };
-                TicketRepository.AddData(ticket);
+                TicketRepository.AddData(ticket); // error
                 MessageBox.Show("Ticket was successfully bought! (Added to tickets)");
             });
         }
